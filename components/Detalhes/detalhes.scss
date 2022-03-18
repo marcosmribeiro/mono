@@ -1,0 +1,78 @@
+.titulo-card {
+  color: #58595B;
+  font-weight: 400;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.texto-card {
+  color: #000000;
+  font-weight: 300;
+  font-family: 'Roboto', sans-serif;
+}
+
+.fg {
+    position: relative;
+    max-width: 363px;
+}
+
+.bg {
+    position: relative;
+    max-width: 460px;
+}
+
+.product-ratting {
+  ::v-deep .v-btn {
+    height: auto;
+    padding: 0;
+    @include palette-text-primary
+  }
+  ::v-deep .v-btn__content {
+    display: block;
+  }
+  @include breakpoints-down(xs) {
+    margin-bottom: $spacing5
+  }
+  .figure {
+    overflow: hidden;
+    margin: 0;
+    display: block;
+    position: relative;
+    height: 240px;
+    @include breakpoints-down(xs) {
+      height: 320px
+    }
+    @include breakpoints-up(lg) {
+      height: 320px
+    }
+    img {
+      transition: all 0.3s;
+      min-height: 100%;
+      transform: translateX(-50px);
+      width: 105%
+    }
+    .figcaption {
+      display: block;
+      top: 16px;
+      @include left(16px);
+      background: $palette-primary-dark;
+      text-align: center;
+      color: $palette-common-white;
+      padding: spacing(0.75, 1.5)
+    }
+  }
+  strong {
+    font-weight: $font-bold
+  }
+  &:hover {
+    img {
+      transform: translateX(0px)
+    }
+  }
+  .text {
+    display: block;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.33;
+    text-transform: none;
+  }
+}
