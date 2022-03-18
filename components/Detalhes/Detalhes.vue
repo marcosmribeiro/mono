@@ -124,8 +124,8 @@ export default {
       posicaoInicial31: -30,
       posicao32: -120,
       posicaoInicial32: -120,
-      posicao33: -100,
-      posicaoInicial33: -100,
+      posicao33: -160,
+      posicaoInicial33: -160,
       imgFg3: imgFg3,
       imgBg3: imgBg3,
       imgsComposicao3: [img32, img31, img33],
@@ -151,34 +151,35 @@ export default {
         }
       }
       
-      if (window.pageYOffset <= 1450) {
-        this.posicao31 = 0;
-        this.posicao33 = -100;
+      if (window.pageYOffset <= 1400) {
+        this.posicao31 = -30;
+        this.posicao33 = -160;
         this.posicao32 = -120;
       }
       else {
-        if (window.pageYOffset > 1500 && (this.posicao31 < 45 || (window.pageYOffset - 1500) < 45)) {
-          let newPosicao31 = this.posicaoInicial31 + (window.pageYOffset - 1500);
+        if (window.pageYOffset > 1480 && (this.posicao31 < 45 || (window.pageYOffset - 1480) < 45)) {
+          let newPosicao31 = this.posicaoInicial31 + (window.pageYOffset - 1480);
+          console.log(newPosicao31, window.pageYOffset - 1500)
           if (newPosicao31 <= 45 && newPosicao31 >= this.posicaoInicial31) {
             this.posicao31 = newPosicao31;
           }
         }
       
-        if (window.pageYOffset - 1450 && (this.posicao32 < -15 || (window.pageYOffset - 1850) < 0)) {
+        if (window.pageYOffset > 1450 && (this.posicao32 < -15 || (window.pageYOffset - 1850) < 0)) {
           let newPosicao32 = this.posicaoInicial32 + (window.pageYOffset - 1450);
           if (newPosicao32 <= -15 && newPosicao32 >= this.posicaoInicial33) {
             this.posicao32 = newPosicao32;
           }
         }
       
-        if (window.pageYOffset > 1450 && window.pageYOffset < 1550 ) {
-          let newPosicao33 = this.posicaoInicial33 + ((window.pageYOffset - 1450));
-          console.log(window.pageYOffset, (window.pageYOffset - 1450), this.posicao33, newPosicao33)
+        if (window.pageYOffset > 1400 && (this.posicao32 < -15 || (window.pageYOffset - 1850) < 0)) {
+          var diferenca = (window.pageYOffset - 1400) * 0.7
+          let newPosicao33 = this.posicaoInicial33 + diferenca;
           this.posicao33 = newPosicao33;
-          if (newPosicao33 <= -63  && newPosicao33 >= this.posicaoInicial33) {
+          if (newPosicao33 <= -55  && newPosicao33 >= this.posicaoInicial33) {
             this.posicao33 = newPosicao33;
           } else {
-            this.posicao33 = -63;
+            this.posicao33 = -55;
           }
         }
       }
