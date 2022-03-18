@@ -1,11 +1,10 @@
-# `fashion-theme`
+# `MONO Landing page`
 
-> TODO: description
 
 ## Installation
 
 ```
-lerna bootstrap
+npm install
 ```
 
 ## Run Development
