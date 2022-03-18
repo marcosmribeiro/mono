@@ -4,12 +4,12 @@
       <div class="product-ratting">
         <v-row class="align-center">
           <v-col>
-            <div class="bg" :style="'background-image: url(' + imgBg1 + ')'">
+            <div class="bg" :style="'background-image: url(' + imgBg1 + '); min-width: 363px; min-height: 422px;'">
               <div class="fg">
                 <img 
                   :src="imgFg1"
                   alt="text"
-                  :style="'margin-top: 15px; margin-left: ' + posicao1 +'px;'"
+                  :style="'margin-top: ' + posicao1 +'px; margin-left: 50px;'"
                 />
               </div>
             </div>
@@ -106,8 +106,8 @@ export default {
     return {
       navbarOffset: 0,
       
-      posicao1: -430,
-      posicaoInicial1: -430,
+      posicao1: -70,
+      posicaoInicial1: -70,
       imgFg1: imgFg1,
       imgBg1: imgBg1,
       imgsComposicao1: [],
@@ -120,12 +120,12 @@ export default {
       imgsComposicao2: [],
       textoDetalhes2: "Proporcionamos uma experiência<br />que transcende os sabores e texturas<br />da culinária nopônica.",
       
-      posicao31: -30,
-      posicaoInicial31: -30,
-      posicao32: -120,
-      posicaoInicial32: -120,
-      posicao33: -160,
-      posicaoInicial33: -160,
+      posicao31: 20,
+      posicaoInicial31: 20,
+      posicao32: -65,
+      posicaoInicial32: -65,
+      posicao33: -70,
+      posicaoInicial33: -70,
       imgFg3: imgFg3,
       imgBg3: imgBg3,
       imgsComposicao3: [img32, img31, img33],
@@ -137,9 +137,10 @@ export default {
   },
   methods: {
     runOnScroll () {
-      if (this.posicao1 < 50 || (window.pageYOffset - 600) < 50) {
-        let newPosicao1 = this.posicaoInicial1 + (window.pageYOffset - 600);
-        if (newPosicao1 <= 50) {
+      if (this.posicao1 < 15 && window.pageYOffset > 800) {
+        let newPosicao1 = this.posicaoInicial1 + (window.pageYOffset - 800);
+        console.log(newPosicao1, window.pageYOffset)
+        if (newPosicao1 <= 15) {
           this.posicao1 = newPosicao1;
         }
       }
@@ -151,35 +152,34 @@ export default {
         }
       }
       
-      if (window.pageYOffset <= 1400) {
-        this.posicao31 = -30;
-        this.posicao33 = -160;
-        this.posicao32 = -120;
+      if (window.pageYOffset <= 1600) {
+        this.posicao31 = 20;
+        this.posicao33 = -70;
+        this.posicao32 = -65;
       }
       else {
-        if (window.pageYOffset > 1480 && (this.posicao31 < 45 || (window.pageYOffset - 1480) < 45)) {
-          let newPosicao31 = this.posicaoInicial31 + (window.pageYOffset - 1480);
-          console.log(newPosicao31, window.pageYOffset - 1500)
+        if (window.pageYOffset > 1680 && (this.posicao31 < 45 || (window.pageYOffset - 1680) < 45)) {
+          let newPosicao31 = this.posicaoInicial31 + (window.pageYOffset - 1680);
           if (newPosicao31 <= 45 && newPosicao31 >= this.posicaoInicial31) {
             this.posicao31 = newPosicao31;
           }
         }
       
-        if (window.pageYOffset > 1450 && (this.posicao32 < -15 || (window.pageYOffset - 1850) < 0)) {
-          let newPosicao32 = this.posicaoInicial32 + (window.pageYOffset - 1450);
+        if (window.pageYOffset > 1650 && (this.posicao32 < -15 || (window.pageYOffset - 1850) < 0)) {
+          let newPosicao32 = this.posicaoInicial32 + (window.pageYOffset - 1650);
           if (newPosicao32 <= -15 && newPosicao32 >= this.posicaoInicial33) {
             this.posicao32 = newPosicao32;
           }
         }
       
-        if (window.pageYOffset > 1400 && (this.posicao32 < -15 || (window.pageYOffset - 1850) < 0)) {
-          var diferenca = (window.pageYOffset - 1400) * 0.7
+        if (window.pageYOffset > 1600 && (this.posicao32 < -15 || (window.pageYOffset - 1850) < 0)) {
+          var diferenca = (window.pageYOffset - 1600) * 0.7
           let newPosicao33 = this.posicaoInicial33 + diferenca;
           this.posicao33 = newPosicao33;
-          if (newPosicao33 <= -55  && newPosicao33 >= this.posicaoInicial33) {
+          if (newPosicao33 <= -40  && newPosicao33 >= this.posicaoInicial33) {
             this.posicao33 = newPosicao33;
           } else {
-            this.posicao33 = -55;
+            this.posicao33 = -40;
           }
         }
       }

@@ -76,7 +76,7 @@ $flag: '/images/flag-logo.png';
   transition: all 0.3s ease;
   position: fixed;
   padding: spacing(0, 1);
-  background-color: transparent;
+  background-color: #000000;
   @include breakpoints-down(xs) {
     z-index: 91
   }

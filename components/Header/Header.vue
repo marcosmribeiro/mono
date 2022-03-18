@@ -88,6 +88,10 @@
                     {{ $t(item.name) }}
                   </v-btn>
                 </li>
+
+                <li>
+                  <midias-sociais />
+                </li>
               </scrollactive>
             </div>
           </nav>
@@ -102,12 +106,13 @@
 </style>
 
 <script>
-import logo from '~/static/images/mono/logotipo-topo.png'
+import logo from '~/static/images/mono/mono-logo-branco.png'
 import link from '~/static/text/link'
 import brand from '~/static/text/brand'
 import navMenu from './menu'
 import Settings from './Settings'
 import MobileMenu from './MobileMenu'
+import MidiasSociais from '~/components/MidiasSociais'
 
 let counter = 0
 function createData(name, url, offset) {
@@ -123,7 +128,8 @@ function createData(name, url, offset) {
 export default {
   components: {
     'setting-menu': Settings,
-    MobileMenu
+    MobileMenu,
+    MidiasSociais
   },
   props: {
     invert: {
