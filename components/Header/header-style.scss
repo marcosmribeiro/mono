@@ -120,7 +120,7 @@ $flag: '/images/flag-logo.png';
         height: 59px;
         width: 156px;
         margin-bottom: 0;
-        margin-top: -3px
+        margin-top: -1px
       }
     }
     nav {
@@ -194,7 +194,7 @@ $flag: '/images/flag-logo.png';
   }
   img {
     display: block;
-    margin: 5px 0;
+    margin: 2px 0 5px 0;
     transition: all 0.3s ease-out;
     margin-bottom: $spacing1;
     width: 156px;

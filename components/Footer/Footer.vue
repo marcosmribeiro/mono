@@ -5,8 +5,9 @@
         <img :src="logo" alt="logo" />
       </div>
       
-      <div class="socmed mb-10">
-        <v-btn icon >
+      <div class="mb-10">
+        <midias-sociais />
+        <!-- <v-btn icon >
           <img :src="fbIcon" />
         </v-btn>
         <v-btn icon >
@@ -14,7 +15,7 @@
         </v-btn>
         <v-btn icon >
           <img :src="whatsappIcon" />
-        </v-btn>
+        </v-btn> -->
       </div>
 
       <v-divider dark/>
@@ -42,6 +43,7 @@ import itgIcon from '~/static/images/mono/itg-icon.png'
 import whatsappIcon from '~/static/images/mono/whatsapp-icon.png'
 import brand from '~/static/text/brand'
 import menu from '../Header/menu'
+import MidiasSociais from '~/components/MidiasSociais'
 
 export default {
   data: () => ({
@@ -51,6 +53,9 @@ export default {
     fbIcon: fbIcon,
     itgIcon: itgIcon,
     whatsappIcon: whatsappIcon,
-  })
+  }),
+  components: {
+    MidiasSociais
+  }
 }
 </script>

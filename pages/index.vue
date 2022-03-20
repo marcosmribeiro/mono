@@ -9,17 +9,20 @@
         <section id="conceito" class="space-top">
           <conceito />
         </section>
-        <section id="detalhes" class="space-top">
-          <detalhes />
+        <section id="cardápio" class="space-top">
+          <cardapio />
         </section>
-        <section id="pedido" class="space-top">
+        <section id="take away" class="space-top">
           <take-away />
         </section>
         <section id="instagram" class="space-top-short">
           <instagram />
         </section>
+        <section id="mapa" class="space-top-short" style="margin-bottom: -7px;">
+          <mapa />
+        </section>
       </div>
-      <section id="footer" class="space-top">
+      <section id="footer">
         <footer-main />
       </section>
       <hidden point="mdDown">
@@ -88,9 +91,10 @@
 import Header from '~/components/Header'
 import VideoBanner from '~/components/VideoBanner'
 import Conceito from '~/components/Conceito'
-import Detalhes from '~/components/Detalhes'
+import Cardapio from '~/components/Cardapio'
 import TakeAway from '~/components/TakeAway'
 import Instagram from '~/components/Instagram'
+import Mapa from '~/components/Mapa'
 import Footer from '~/components/Footer'
 import Hidden from '~/components/Hidden'
 import PageNav from '~/components/PageNav'
@@ -101,9 +105,10 @@ export default {
     'header-main': Header,
     VideoBanner,
     Conceito,
-    Detalhes,
+    Cardapio,
     TakeAway,
     Instagram,
+    Mapa,
     'footer-main': Footer,
     PageNav,
     Hidden

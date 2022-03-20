@@ -1,8 +1,8 @@
 const menu = [
   'conceito',
-  'detalhes',
-  'pedido',
-  'instagram'
+  'cardápio',
+  'take away',
+  'mapa'
 ]
 
 export default menu

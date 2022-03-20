@@ -3,10 +3,10 @@
     <v-btn icon >
       <img :src="fbIcon" style="width: 30px;" />
     </v-btn>
-    <v-btn icon >
+    <v-btn icon href="https://www.instagram.com/restaurantemono/">
       <img :src="itgIcon" style="width: 30px;" />
     </v-btn>
-    <v-btn icon >
+    <v-btn icon href="https://wa.me/5521998559595">
       <img :src="whatsappIcon" style="width: 30px;" />
     </v-btn>
   </div>
@@ -24,6 +24,7 @@ export default {
     itgIcon: itgIcon,
     whatsappIcon: whatsappIcon,
   })
+
 }
 
 

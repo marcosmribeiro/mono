@@ -35,16 +35,7 @@
                 <span class="bar hamburger-inner" />
               </span>
             </v-btn>
-            <div class="logo">
-              <nuxt-link
-                v-if="invert"
-                :to="link.fashion.home"
-              >
-                <img
-                  :src="logo"
-                  alt="logo"
-                >
-              </nuxt-link>
+            <div class="logo" align="center">
               <scrollactive
                 v-if="!invert && loaded"
                 tag="span"
@@ -148,10 +139,10 @@ export default {
       openDrawer: null,
       navOffset: 20,
       menuList: [
-        createData(navMenu[0], '#' + navMenu[0], 300),
-        createData(navMenu[1], '#' + navMenu[1], 300),
-        createData(navMenu[2], '#' + navMenu[2], 300),
-        createData(navMenu[3], '#' + navMenu[3], 300),
+        createData(navMenu[0], '#' + navMenu[0], 100),
+        createData(navMenu[1], '#' + navMenu[1], 100),
+        createData(navMenu[2], '#' + navMenu[2], 100),
+        createData(navMenu[3], '#' + navMenu[3], 58),
       ]
     }
   },

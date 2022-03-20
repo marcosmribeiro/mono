@@ -12,6 +12,7 @@
                   rounded
                   class="cardapio"
                   href="https://jotaja.com/?pedido=mono"
+                  target="_blank"
                 >
                   Confira o cardápio aqui
                 </v-btn>

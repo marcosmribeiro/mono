@@ -24,6 +24,29 @@
           </div>
         </slick>
       </div>
+      <div class="pt-5">
+        <v-row justify="center">
+          <v-col md="3" class="pb-10">
+            <v-btn
+              x-large
+              rounded
+              href="https://www.instagram.com/restaurantemono/"
+              class="botao"
+              style="margin-right: 15px;"
+            >
+              Veja mais
+            </v-btn>
+            <v-btn
+              x-large
+              rounded
+              href="https://www.instagram.com/restaurantemono/"
+              class="botao"
+            >
+              Siga Mono
+            </v-btn>
+          </v-col>
+        </v-row>
+      </div>
     </div>
   </div>
 </template>
