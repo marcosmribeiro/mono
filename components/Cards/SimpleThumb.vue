@@ -1,6 +1,6 @@
 <template>
   <v-btn
-    :href="link.fashion.detail"
+    :href="link"
     text
     class="simple-thumb"
   >
@@ -17,16 +17,18 @@
 </style>
 
 <script>
-import link from '~/static/text/link'
 
 export default {
   data() {
     return {
-      link: link
     }
   },
   props: {
     img: {
+      type: String,
+      required: true
+    },
+    link: {
       type: String,
       required: true
     }

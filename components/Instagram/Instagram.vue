@@ -14,12 +14,13 @@
           :options="slickOptions"
         >
           <div
-            v-for="(item, index) in dataProducts"
+            v-for="(item, index) in items"
             :key="index"
             class="item"
           >
             <simple-thumb-card
               :img="item.img"
+              :link="item.link"
             />
           </div>
         </slick>
@@ -60,32 +61,6 @@ import imgAPI from '~/static/images/imgAPI'
 import Title from '../Title'
 import SimpleThumbCard from '../Cards/SimpleThumb'
 
-const dataProducts = [
-  {
-    img: imgAPI.instagram[0]
-  },
-  {
-    img: imgAPI.instagram[1]
-  },
-  {
-    img: imgAPI.instagram[2]
-  },
-  {
-    img: imgAPI.instagram[3]
-  },
-  {
-    img: imgAPI.instagram[4]
-  },
-  {
-    img: imgAPI.instagram[5]
-  },
-  {
-    img: imgAPI.instagram[2]
-  },
-  {
-    img: imgAPI.instagram[4]
-  }
-]
 
 export default {
   components: {
@@ -96,7 +71,7 @@ export default {
   data() {
     return {
       loaded: false,
-      dataProducts: dataProducts,
+      items: imgAPI.instagram,
       slickOptions: {
         dots: true,
         speed: 500,
@@ -128,7 +103,7 @@ export default {
     }
   },
   mounted() {
-    this.loaded = true
+    this.loaded = true;
   },
   methods: {
     slickNext() {

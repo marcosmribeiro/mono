@@ -3,18 +3,18 @@
     <v-container :class="{ 'fixed-width': isDesktop }">
       <div class="product-ratting">
         <v-row class="align-center">
-          <v-col>
+          <v-col align="center">
             <div class="bg" :style="'background-image: url(' + imgBg1 + '); min-width: 363px; min-height: 422px;'">
               <div class="fg">
                 <img 
                   :src="imgFg1"
                   alt="text"
-                  :style="'margin-top: ' + posicao1 +'px; margin-left: 50px;'"
+                  :style="'margin-top: ' + posicao1 +'px; margin-left: ' + margem1 + 'px;'"
                 />
               </div>
             </div>
           </v-col>
-          <v-col>
+          <v-col align="center">
             <p class="text-h4 titulo-card text-center">
               DETALHES
             </p>
@@ -33,7 +33,7 @@
               <span v-html="textoCardapio2"></span>
             </p>
           </v-col>
-          <v-col>
+          <v-col align="center">
             <div class="bg" :style="'background-image: url(' + imgBg2 + ')'">
               <div class="fg">
                 <img 
@@ -47,8 +47,8 @@
         </v-row>
 
         <v-row class="align-center">
-          <v-col>
-            <div class="bg" :style="'background-image: url(' + imgBg3 + '); margin-left: 25px;'">
+          <v-col align="center">
+            <div class="bg" :style="'background-image: url(' + imgBg3 + ');'">
               <div class="fg">
                 <img 
                   :src="imgsComposicao3[2]"
@@ -76,7 +76,7 @@
               </div>
             </div>
           </v-col>
-          <v-col>
+          <v-col align="center">
             <p class="text-h4 titulo-card text-center">
               MOMENTO MONO
             </p>
@@ -109,6 +109,7 @@ export default {
     return {
       navbarOffset: 0,
       
+      margem1: 0,
       posicao1: -70,
       posicaoInicial1: -70,
       imgFg1: imgFg1,
@@ -118,7 +119,7 @@ export default {
       
       posicao2: 680,
       posicaoInicial2: 680,
-      maxPosicao2: 130,
+      maxPosicao2: 65,
       imgFg2: imgFg2,
       imgBg2: imgBg2,
       imgsComposicao2: [],
@@ -143,15 +144,17 @@ export default {
   },
   methods: {
     runOnScroll () {
+      if (!this.isDesktop) {
+        this.margem1 = 5;
+        this.maxPosicao2 = 65;
+      }
+
+
       if (this.posicao1 < 15 && window.pageYOffset > 800) {
         let newPosicao1 = this.posicaoInicial1 + (window.pageYOffset - 800);
         if (newPosicao1 <= 15) {
           this.posicao1 = newPosicao1;
         }
-      }
-
-      if (!this.isDesktop) {
-        this.maxPosicao2 = 110;
       }
 
       if (this.posicao2 > this.maxPosicao2 || (window.pageYOffset - 1030) > this.maxPosicao2) {
