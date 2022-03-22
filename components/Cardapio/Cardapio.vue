@@ -14,23 +14,23 @@
               </div>
             </div>
           </v-col>
-          <v-col class="order-last order-md-first">
+          <v-col>
             <p class="text-h4 titulo-card text-center">
-                DETALHES
+              DETALHES
             </p>
             <p class="text-center texto-card" style="line-height: 2.5;">
-                <span v-html="textoCardapio1"></span>
+              <span v-html="textoCardapio1"></span>
             </p>
           </v-col>
         </v-row>
 
         <v-row class="align-center">
-          <v-col>
+          <v-col class="order-last order-md-first">
             <p class="text-h4 titulo-card text-center">
-                EXPERIÊNCIA MONO
+              EXPERIÊNCIA MONO
             </p>
             <p class="text-center texto-card" style="line-height: 2.5;">
-                <span v-html="textoCardapio2"></span>
+              <span v-html="textoCardapio2"></span>
             </p>
           </v-col>
           <v-col>
@@ -53,32 +53,35 @@
                 <img 
                   :src="imgsComposicao3[2]"
                   alt="text"
-                  :style="'margin-top: ' + posicao33 +'px; margin-left: 95px; position: absolute; z-index: 1;'"
+                  class="estiloCouve2"
+                  :style="'margin-top: ' + posicao33 +'px; position: absolute; z-index: 1;'"
                 />
                 <img 
                   :src="imgsComposicao3[1]"
                   alt="text"
-                  :style="'margin-top: ' + posicao32 +'px; margin-left: 150px; position: absolute; z-index: 1;'"
+                  class="estiloCouve1"
+                  :style="'margin-top: ' + posicao32 +'px; position: absolute; z-index: 1;'"
                 />
                 <img 
                   :src="imgsComposicao3[0]"
                   alt="text"
-                  :style="'margin-top: ' + posicao31 +'px; margin-left: 85px; position: absolute; z-index: 1;'"
+                  class="estiloCouve0"
+                  :style="'margin-top: ' + posicao31 +'px;position: absolute; z-index: 1;'"
                 />
                 <img 
                   :src="imgFg3"
                   alt="text"
-                  :style="'margin-top: 25px; margin-left: -58px; max-width: 462px;'"
+                  class="estiloCouve"
                 />
               </div>
             </div>
           </v-col>
-          <v-col class="order-last order-md-first">
+          <v-col>
             <p class="text-h4 titulo-card text-center">
-                MOMENTO MONO
+              MOMENTO MONO
             </p>
             <p class="text-center texto-card" style="line-height: 2.5;">
-                <span v-html="textoCardapio3"></span>
+              <span v-html="textoCardapio3"></span>
             </p>
           </v-col>
         </v-row>
@@ -115,6 +118,7 @@ export default {
       
       posicao2: 680,
       posicaoInicial2: 680,
+      maxPosicao2: 130,
       imgFg2: imgFg2,
       imgBg2: imgBg2,
       imgsComposicao2: [],
@@ -130,6 +134,8 @@ export default {
       imgBg3: imgBg3,
       imgsComposicao3: [img32, img31, img33],
       textoCardapio3: "Acreditamos que tempo é vida,<br />logo, oferecemos uma mistura de boas<br />sensações para breves momentos<br />serem desfrutados de forma plena.",
+
+      estiloCouve: '',
     }
   },
   components: {
@@ -144,9 +150,13 @@ export default {
         }
       }
 
-      if (this.posicao2 > 130 || (window.pageYOffset - 1030) > 130) {
+      if (!this.isDesktop) {
+        this.maxPosicao2 = 110;
+      }
+
+      if (this.posicao2 > this.maxPosicao2 || (window.pageYOffset - 1030) > this.maxPosicao2) {
         let newPosicao2 = this.posicaoInicial2 - (window.pageYOffset - 1030);
-        if (newPosicao2 >= 130) {
+        if (newPosicao2 >= this.maxPosicao2) {
           this.posicao2 = newPosicao2;
         }
       }
@@ -196,10 +206,6 @@ export default {
       const mdUp = this.$store.state.breakpoints.mdUp
       return mdUp.indexOf(this.$mq) > -1
     },
-    isMobile() {
-      const xsDown = this.$store.state.breakpoints.xsDown
-      return xsDown.indexOf(this.$mq) > -1
-    }
   }
 }
 </script>

@@ -76,3 +76,36 @@
     text-transform: none;
   }
 }
+
+@media only screen and (max-width : 600px) {
+  .estiloCouve {
+    margin-left: -25px;
+    max-width: 450px;
+  }
+  .estiloCouve0 {
+     margin-left: 118px;
+  }
+  .estiloCouve1 {
+    margin-left: 183px;
+  }
+  .estiloCouve2 {
+    margin-left: 128px;
+  }
+}
+
+@media only screen and (min-width : 601px) {
+  .estiloCouve {
+    margin-top: 25px;
+    margin-left: -58px;
+    max-width: 462px;
+  }
+  .estiloCouve0 {
+     margin-left: 85px;
+  }
+  .estiloCouve1 {
+    margin-left: 150px;
+  }
+  .estiloCouve2 {
+    margin-left: 95px;
+  }
+}

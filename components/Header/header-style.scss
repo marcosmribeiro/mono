@@ -117,8 +117,8 @@ $flag: '/images/flag-logo.png';
     }
     .logo {
       img {
-        height: 59px;
-        width: 156px;
+        height: 40px;
+        width: 106px;
         margin-bottom: 0;
         margin-top: -1px
       }
@@ -182,6 +182,9 @@ $flag: '/images/flag-logo.png';
 }
 
 .logo {
+  @include breakpoints-down(xs) {
+     margin-right: 40px;
+  }
   a {
     text-decoration: none;
     display: block;
@@ -200,7 +203,7 @@ $flag: '/images/flag-logo.png';
     width: 156px;
     height: 59px;
     @include breakpoints-down(xs) {
-      width: 96px;
+      width: 106px;
       height: 40px;
     }
   }

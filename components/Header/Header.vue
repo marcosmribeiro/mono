@@ -35,6 +35,7 @@
                 <span class="bar hamburger-inner" />
               </span>
             </v-btn>
+            <v-spacer v-if="isMobile" />
             <div class="logo" align="center">
               <scrollactive
                 v-if="!invert && loaded"
@@ -51,6 +52,7 @@
                 </a>
               </scrollactive>
             </div>
+            <v-spacer v-if="isMobile" />
             <div v-if="isDesktop">
               <scrollactive
                 v-if="loaded"

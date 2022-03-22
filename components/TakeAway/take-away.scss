@@ -14,3 +14,10 @@
     font-family: 'Roboto', sans-serif;
     background-color: #A4A4A4 !important;
 }
+
+.imagem {
+    @include breakpoints-down(xs) {
+        width: 400px;
+        margin-left: 40px;
+    }
+}

@@ -18,11 +18,12 @@
                 </v-btn>
             </p>
         </v-col>
-        <v-col md="6" class="pt-0 order-first order-md-last">
-            <img
-              :src="imgTakeAway"
-              alt="take away"
-            >
+        <v-col md="6" class="pt-0 order-first order-md-last" align="center">
+          <img
+            class="imagem"
+            :src="imgTakeAway"
+            alt="take away"
+          >
         </v-col>
     </v-row>
   </div>

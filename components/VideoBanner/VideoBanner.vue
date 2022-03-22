@@ -1,14 +1,13 @@
 <template>
   <div class="root">
-    <div class="video">
+    <div class="video" align="center">
       <div class="overlay" />
-      <img v-if="!play || isMobile" :src="videoPlaceholder" alt="cover" />
+      <img v-if="!play" :src="videoPlaceholder" class="placeholder" alt="cover" />
       <div v-if="yt.use">
         <youtube
-          v-if="isDesktop"
           :video-id="videoId"
           :player-vars="playerVars"
-          :width= "1080"
+          :width="1080"
           :height="720"
           ref="youtube"
           @playing="playing"
@@ -51,7 +50,6 @@ export default {
     return {
       videoPlaceholder: videoPlaceholder,
       loaded: false,
-      // videoId: '3_VKCIKsn80',
       videoId: 'Vtz6W6lCyTo',
       playerVars: {
         autoplay: 1,
