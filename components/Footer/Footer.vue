@@ -1,21 +1,12 @@
 <template>
   <footer class="root" style="background-color: #414042;">
-    <v-container class="max-lg pt-10">
+    <v-container class="max-lg pt-10" style="background-color: transparent;">
       <div class="logo">
         <img :src="logo" alt="logo" />
       </div>
       
       <div class="mb-10">
         <midias-sociais />
-        <!-- <v-btn icon >
-          <img :src="fbIcon" />
-        </v-btn>
-        <v-btn icon >
-          <img :src="itgIcon" />
-        </v-btn>
-        <v-btn icon >
-          <img :src="whatsappIcon" />
-        </v-btn> -->
       </div>
 
       <v-divider dark/>

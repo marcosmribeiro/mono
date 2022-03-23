@@ -100,7 +100,6 @@
 
 <script>
 import logo from '~/static/images/mono/mono-logo-branco.png'
-import link from '~/static/text/link'
 import brand from '~/static/text/brand'
 import navMenu from './menu'
 import Settings from './Settings'
@@ -133,7 +132,6 @@ export default {
   data() {
     return {
       logo: logo,
-      link: link,
       loaded: false,
       brand: brand,
       section: 0,

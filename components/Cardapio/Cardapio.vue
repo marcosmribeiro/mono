@@ -33,7 +33,7 @@
               <span v-html="textoCardapio2"></span>
             </p>
           </v-col>
-          <v-col align="center">
+          <v-col align="center" style="min-width: 392px; overflow: hidden;">
             <div class="bg" :style="'background-image: url(' + imgBg2 + ')'">
               <div class="fg">
                 <img 

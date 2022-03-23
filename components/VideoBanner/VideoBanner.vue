@@ -3,13 +3,14 @@
     <div class="video" align="center">
       <div class="overlay" />
       <img v-if="!play" :src="videoPlaceholder" class="placeholder" alt="cover" />
-      <div v-if="yt.use">
+      <div class="rwd-video">
         <youtube
           :video-id="videoId"
           :player-vars="playerVars"
           :width="1080"
           :height="720"
           ref="youtube"
+          @ready="onReady"
           @playing="playing"
           @ended="ended"
         />
@@ -57,7 +58,7 @@ export default {
         rel: 0,
         showinfo: 0,
         mute: 1,
-        origin: 'http://localhost:8004'
+        origin: 'https://www.youtube.com'
       },
       yt: youtube,
       play: false,
@@ -68,6 +69,9 @@ export default {
     this.loaded = true
   },
   methods: {
+    onReady() {
+      this.player.playVideo()
+    },
     playing() {
       this.play = true
       this.playCtrl = true

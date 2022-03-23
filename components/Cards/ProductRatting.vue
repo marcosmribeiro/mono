@@ -1,7 +1,6 @@
 <template>
   <div class="product-ratting">
     <v-btn
-      :href="link.fashion.detail"
       class="btn-wrap"
       text
     >
@@ -17,12 +16,10 @@
 </style>
 
 <script>
-import link from '~/static/text/link'
 
 export default {
   data() {
     return {
-      link: link
     }
   },
   props: {

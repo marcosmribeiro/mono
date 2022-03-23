@@ -84,6 +84,7 @@ $flag: '/images/flag-logo.png';
     height: auto !important
   }
   .container {
+    background-color: #000000;
     #main-wrap & {
       @include breakpoints-down(md) {
         padding: 0
@@ -94,7 +95,7 @@ $flag: '/images/flag-logo.png';
     transition: all 0.5s ease-out;
   }
   &.fixed {
-    @include bg-color-fade($palette-primary-dark, 0.5);
+    @include bg-color-fade(#000000, 0.5);
     backdrop-filter: saturate(180%) blur(20px);
     top: 0;
     height: auto !important;
@@ -359,7 +360,7 @@ $flag: '/images/flag-logo.png';
 .mobile-nav {
   background: none !important;
   backdrop-filter: saturate(180%) blur(20px);
-  @include bg-color-fade($palette-primary-dark, 0.5);
+  @include bg-color-fade(#000000, 0.5);
   position: fixed;
   z-index: 90;
   min-width: 300px;

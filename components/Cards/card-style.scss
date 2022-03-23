@@ -20,7 +20,7 @@
     margin: 0;
     display: block;
     position: relative;
-    height: 240px;
+    height: 300px;
     @include breakpoints-down(xs) {
       height: 320px
     }
@@ -195,11 +195,17 @@
   }
 }
 
+.root {
+  .slick-list .draggable {
+    overflow: visible;
+  }
+}
+
 .simple-thumb {
   text-align: center;
-  width: 186px;
-  height: 186px !important;
-  padding: spacing(2, 1);
+  min-width: 186px;
+  min-height: 186px;
+  padding: 3px;
   transition: all 0.35s ease-out;
   margin: $spacing1 auto;
   .wrap {
@@ -207,13 +213,13 @@
   }
   .figure {
     display: block;
-    height: 180px;
+    height: 320px;
     // margin: spacing(0, 1, 2);
     text-align: center;
     img {
       display: block;
       max-height: 100%;
-      margin: 0 auto
+      margin: 0 auto;
     }
   }
   strong {
@@ -238,4 +244,20 @@
   color: #000000;
   font-weight: 300;
   font-family: 'Roboto', sans-serif;
+}
+
+
+.slick-slide
+{
+    height: inherit !important;
+}
+
+.slick-track
+{
+    display: flex !important;
+}
+
+.slick-list
+{
+    overflow: visible !important;
 }

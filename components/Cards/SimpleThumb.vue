@@ -6,7 +6,7 @@
   >
     <span class="wrap">
       <span class="figure">
-        <img :src="img" alt="title" />
+        <img :src="img" alt="title" style="height: 170%; overflow: visible;" />
       </span>
     </span>
   </v-btn>

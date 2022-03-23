@@ -32,12 +32,10 @@
 
 <script>
 import navMenu from './menu'
-import link from '~/static/text/link'
 
 export default {
   data() {
     return {
-      link: link,
       navMenu: navMenu
     }
   },

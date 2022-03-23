@@ -1,8 +1,8 @@
 <template>
   <div>
-    <v-btn icon >
+    <!-- <v-btn icon >
       <img :src="fbIcon" style="width: 30px;" />
-    </v-btn>
+    </v-btn> -->
     <v-btn icon href="https://www.instagram.com/restaurantemono/">
       <img :src="itgIcon" style="width: 30px;" />
     </v-btn>

@@ -1,15 +1,10 @@
 <template>
   <div class="root">
-    <title-main align="center" primary="MONO NO INSTAGRAM" class="titulo" />
+    <p class="text-h4 titulo text-center">MONO NO INSTAGRAM</p>
     <div class="carousel-wrap justify-center">
-      <!-- <v-btn class="nav prev" @click="slickPrev">
-        <v-icon>mdi-arrow-left</v-icon>
-      </v-btn>
-      <v-btn class="nav next" @click="slickNext">
-        <v-icon>mdi-arrow-right</v-icon>
-      </v-btn> -->
       <div v-if="loaded">
         <slick
+          id="slider-principal"
           ref="slider"
           :options="slickOptions"
         >
@@ -19,6 +14,8 @@
             class="item"
           >
             <simple-thumb-card
+              class="TESTE"
+              style="min-height: 320px; min-width: 320px"
               :img="item.img"
               :link="item.link"
             />
@@ -58,13 +55,11 @@
 
 <script>
 import imgAPI from '~/static/images/imgAPI'
-import Title from '../Title'
 import SimpleThumbCard from '../Cards/SimpleThumb'
 
 
 export default {
   components: {
-    'title-main': Title,
     SimpleThumbCard,
     Slick: () => import('vue-slick')
   },
@@ -75,7 +70,7 @@ export default {
       slickOptions: {
         dots: true,
         speed: 500,
-        slidesToShow: 6,
+        slidesToShow: 4,
         arrows: false,
         slidesToScroll: 1,
         autoplay: true,
@@ -94,8 +89,8 @@ export default {
           {
             breakpoint: 600,
             settings: {
-              slidesToShow: 2,
-              slidesToScroll: 2
+              slidesToShow: 1,
+              slidesToScroll: 1
             }
           }
         ]
