@@ -46,7 +46,7 @@
           </v-col>
         </v-row>
 
-        <v-row class="align-center">
+        <v-row class="align-center" :style="margemCouve">
           <v-col align="center" >
             <div class="bg" :style="'background-image: url(' + imgBg3 + ');'">
               <div class="fg">
@@ -138,8 +138,12 @@ export default {
       imgsComposicao3: [img32, img31, img33],
       textoCardapio3: "Acreditamos que tempo é vida,<br />logo, oferecemos uma mistura de boas<br />sensações para breves momentos<br />serem desfrutados de forma plena.",
       textoCardapio31: "Acreditamos que tempo é vida, logo, oferecemos uma mistura de boas sensações para breves momentos serem desfrutados de forma plena.",
+      margemCouve: '',
 
       estiloCouve: '',
+      offSetProduto1: 0,
+      offSetProduto2: 0,
+      offSetProduto3: 0,
     }
   },
   components: {
@@ -149,39 +153,43 @@ export default {
     runOnScroll () {
       if (!this.isDesktop) {
         this.margem1 = 5;
-        this.maxPosicao2 = 65;
+        this.maxPosicao2 = 80;
+        this.margemCouve = "margin-top: 50px;";
+
+        this.offSetProduto1 = 300;
+        this.offSetProduto2 = 1300;
+        this.offSetProduto3 = 100;
       }
 
-
-      if (this.posicao1 < 15 && window.pageYOffset > 800) {
-        let newPosicao1 = this.posicaoInicial1 + (window.pageYOffset - 800);
+      if (this.posicao1 < 15 && window.pageYOffset > (800 - this.offSetProduto1)) {
+        let newPosicao1 = this.posicaoInicial1 + (window.pageYOffset - (800 - this.offSetProduto1));
         if (newPosicao1 <= 15) {
           this.posicao1 = newPosicao1;
         }
       }
 
-      if (this.posicao2 > this.maxPosicao2 || (window.pageYOffset - 1030) > this.maxPosicao2) {
-        let newPosicao2 = this.posicaoInicial2 - (window.pageYOffset - 1030);
+      if (this.posicao2 > this.maxPosicao2 || (window.pageYOffset - (1030 - this.offSetProduto1)) > this.maxPosicao2) {
+        let newPosicao2 = this.posicaoInicial2 - (window.pageYOffset - (1030 - this.offSetProduto1));
         if (newPosicao2 >= this.maxPosicao2) {
           this.posicao2 = newPosicao2;
         }
       }
       
-      if (window.pageYOffset <= 1600) {
+      if (window.pageYOffset <= (1680 - this.offSetProduto1)) {
         this.posicao31 = 20;
         this.posicao33 = -70;
         this.posicao32 = -65;
       }
       else {
-        if (window.pageYOffset > 1680 && (this.posicao31 < 45 || (window.pageYOffset - 1680) < 45)) {
-          let newPosicao31 = this.posicaoInicial31 + (window.pageYOffset - 1680);
+        if (window.pageYOffset > (1680 - this.offSetProduto1) && (this.posicao31 < 45 || (window.pageYOffset - (1680 - this.offSetProduto1)) < 45)) {
+          let newPosicao31 = this.posicaoInicial31 + (window.pageYOffset - (1680 - this.offSetProduto1));
           if (newPosicao31 <= 45 && newPosicao31 >= this.posicaoInicial31) {
             this.posicao31 = newPosicao31;
           }
         }
       
-        if (window.pageYOffset > 1650 && (this.posicao32 < -15 || (window.pageYOffset - 1850) < 0)) {
-          let newPosicao32 = this.posicaoInicial32 + (window.pageYOffset - 1650);
+        if (window.pageYOffset > (1680 - this.offSetProduto1) && (this.posicao32 < -15 || (window.pageYOffset - 1850) < 0)) {
+          let newPosicao32 = this.posicaoInicial32 + (window.pageYOffset - (1680 - this.offSetProduto1));
           if (newPosicao32 <= -15 && newPosicao32 >= this.posicaoInicial33) {
             this.posicao32 = newPosicao32;
           }
