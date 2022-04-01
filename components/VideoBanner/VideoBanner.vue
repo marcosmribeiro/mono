@@ -1,14 +1,14 @@
 <template>
-  <div class="root">
+  <div class="root" :style="alturaMuldura">
     <div class="video" align="center">
       <div class="overlay" />
       <img v-if="!play" :src="videoPlaceholder" class="placeholder" alt="cover" />
-      <div class="rwd-video">
+      <div class="rwd-video" :style="'margin-top: ' + margemVideo + 'px;'">
         <youtube
           :video-id="videoId"
           :player-vars="playerVars"
-          :width="1080"
-          :height="720"
+          :width="videoWidth"
+          :height="videoHeight"
           ref="youtube"
           @ready="onReady"
           @playing="playing"
@@ -52,6 +52,10 @@ export default {
       videoPlaceholder: videoPlaceholder,
       loaded: false,
       videoId: 'Vtz6W6lCyTo',
+      videoWidth: 640,
+      videoHeight: 360,
+      alturaMuldura: '100%',
+      margemVideo: 0,
       playerVars: {
         autoplay: 1,
         controls: 0,
@@ -70,9 +74,16 @@ export default {
   },
   methods: {
     onReady() {
+      this.videoWidth = Math.floor(window.innerWidth * 0.9);
+      console.log(this.videoWidth)
+      this.videoHeight = Math.floor((this.videoWidth / 16) * 9);
       this.player.playVideo()
     },
     playing() {
+      if (this.videoWidth < 600) {
+        this.margemVideo = 60;
+        this.alturaMuldura = 'height: ' + (this.videoHeight + 80) +'px;'
+      }
       this.play = true
       this.playCtrl = true
     },
@@ -97,7 +108,7 @@ export default {
       return lgUp.indexOf(this.$mq) > -1
     },
     isMobile() {
-      const mdDown = this.$store.state.breakpoints.mdDown
+      const mdDown = this.$store.state.breakpoints.mdDown      
       return mdDown.indexOf(this.$mq) > -1
     }
   }

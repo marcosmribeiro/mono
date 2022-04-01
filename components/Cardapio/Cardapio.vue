@@ -4,7 +4,7 @@
       <div class="product-ratting">
         <v-row class="align-center">
           <v-col align="center">
-            <div class="bg" :style="'background-image: url(' + imgBg1 + '); min-width: 363px; min-height: 422px;'">
+            <div class="bg" :style="'background-image: url(' + imgBg1 + '); min-width: 300px; min-height: 349px;'">
               <div class="fg">
                 <img 
                   :src="imgFg1"
@@ -19,21 +19,23 @@
               DETALHES
             </p>
             <p class="text-center texto-card" style="line-height: 2.5;">
-              <span v-html="textoCardapio1"></span>
+              {{ textoCardapio11 }}
+              <!-- <span v-html="textoCardapio1"></span> -->
             </p>
           </v-col>
         </v-row>
 
         <v-row class="align-center">
-          <v-col class="order-last order-md-first">
+          <v-col align="center" class="order-last order-md-first">
             <p class="text-h4 titulo-card text-center">
               EXPERIÊNCIA MONO
             </p>
             <p class="text-center texto-card" style="line-height: 2.5;">
-              <span v-html="textoCardapio2"></span>
+              {{ textoCardapio21 }}
+              <!-- <span v-html="textoCardapio2"></span> -->
             </p>
           </v-col>
-          <v-col align="center" style="min-width: 392px; overflow: hidden;">
+          <v-col align="center" style="min-width: 300px; overflow: hidden;">
             <div class="bg" :style="'background-image: url(' + imgBg2 + ')'">
               <div class="fg">
                 <img 
@@ -47,7 +49,7 @@
         </v-row>
 
         <v-row class="align-center">
-          <v-col align="center">
+          <v-col align="center" >
             <div class="bg" :style="'background-image: url(' + imgBg3 + ');'">
               <div class="fg">
                 <img 
@@ -81,7 +83,8 @@
               MOMENTO MONO
             </p>
             <p class="text-center texto-card" style="line-height: 2.5;">
-              <span v-html="textoCardapio3"></span>
+              {{ textoCardapio31 }}
+              <!-- <span v-html="textoCardapio3"></span> -->
             </p>
           </v-col>
         </v-row>
@@ -116,6 +119,7 @@ export default {
       imgBg1: imgBg1,
       imgsComposicao1: [],
       textoCardapio1: "Nossa cozinha é equipada com as melhores mentes<br />que produzem em cada peça, detalhes que alimentam<br />os sentidos",
+      textoCardapio11: "Nossa cozinha é equipada com as melhores mentes que produzem em cada peça, detalhes que alimentam os sentidos",
       
       posicao2: 680,
       posicaoInicial2: 680,
@@ -124,6 +128,7 @@ export default {
       imgBg2: imgBg2,
       imgsComposicao2: [],
       textoCardapio2: "Proporcionamos uma experiência<br />que transcende os sabores e texturas<br />da culinária nopônica.",
+      textoCardapio21: "Proporcionamos uma experiência que transcende os sabores e texturas da culinária nopônica.",
       
       posicao31: 20,
       posicaoInicial31: 20,
@@ -135,6 +140,7 @@ export default {
       imgBg3: imgBg3,
       imgsComposicao3: [img32, img31, img33],
       textoCardapio3: "Acreditamos que tempo é vida,<br />logo, oferecemos uma mistura de boas<br />sensações para breves momentos<br />serem desfrutados de forma plena.",
+      textoCardapio31: "Acreditamos que tempo é vida, logo, oferecemos uma mistura de boas sensações para breves momentos serem desfrutados de forma plena.",
 
       estiloCouve: '',
     }

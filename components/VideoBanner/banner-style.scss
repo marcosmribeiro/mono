@@ -2,14 +2,15 @@
   display: block;
   position: relative;
   background: $palette-common-black;
+  margin-top: 15px;
   height: 720px;
   @include breakpoints-down(xs) {
-    height: 640px
+    height: 100%;
+    margin-top: 60px;
   }
 }
 
 .video {
-  height: 100%;
   overflow: hidden;
   position: relative;
   img {
@@ -26,11 +27,11 @@
       // height: 100%;
     }
     @include breakpoints-down(xs) {
-      top: 130px
+      top: 130px;
     }
   }
   ::v-deep iframe {
-    width: 100%
+    width: 100vw
   }
 }
 

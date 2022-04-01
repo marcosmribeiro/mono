@@ -7,6 +7,7 @@
 .texto-card {
   color: #000000;
   font-weight: 300;
+  max-width: 320px;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -15,9 +16,18 @@
     max-width: 363px;
 }
 
+.fg > img {
+  @include breakpoints-down(xs) {
+    max-width: 320px;
+  }
+}
+
 .bg {
-    position: relative;
-    max-width: 460px;
+  position: relative;
+  max-width: 460px;
+  @include breakpoints-down(xs) {
+    max-width: 320px;
+  }
 }
 
 .product-ratting {
@@ -79,7 +89,7 @@
 
 @media only screen and (max-width : 600px) {
   .estiloCouve {
-    margin-left: -25px;
+    // margin-left: -25px;
     max-width: 450px;
   }
   .estiloCouve0 {

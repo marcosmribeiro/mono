@@ -17,7 +17,7 @@
 
 .imagem {
     @include breakpoints-down(xs) {
-        width: 400px;
-        margin-left: 20px;
+        width: 300px;
+        margin-left: 27px;
     }
 }

@@ -36,7 +36,7 @@
               </span>
             </v-btn>
             <v-spacer v-if="isMobile" />
-            <div class="logo" align="center">
+            <div class="logo" align="center" justify="center">
               <scrollactive
                 v-if="!invert && loaded"
                 tag="span"

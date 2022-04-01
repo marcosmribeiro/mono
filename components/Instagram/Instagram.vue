@@ -30,15 +30,6 @@
               rounded
               href="https://www.instagram.com/restaurantemono/"
               class="botao"
-              style="margin-right: 15px;"
-            >
-              Veja mais
-            </v-btn>
-            <v-btn
-              x-large
-              rounded
-              href="https://www.instagram.com/restaurantemono/"
-              class="botao"
             >
               Siga Mono
             </v-btn>
@@ -72,16 +63,16 @@ export default {
         speed: 500,
         slidesToShow: 4,
         arrows: false,
-        slidesToScroll: 1,
+        slidesToScroll: 4,
         autoplay: true,
-        autoplaySpeed: 4000,
+        autoplaySpeed: 2000,
         infinite: true,
         responsive: [
           {
             breakpoint: 1024,
             settings: {
               slidesToShow: 4,
-              slidesToScroll: 3,
+              slidesToScroll: 4,
               infinite: true,
               dots: true
             }
