@@ -106,7 +106,7 @@
 @media only screen and (min-width : 601px) {
   .estiloCouve {
     margin-left: -50px;
-    max-width: 462px;
+    max-width: 400px;
   }
   .estiloCouve0 {
     margin-left: 93px;
@@ -116,5 +116,11 @@
   }
   .estiloCouve2 {
     margin-left: 103px;
+  }
+}
+
+@media only screen and (min-width : 1200px) {
+  .estiloCouve > img {
+      max-width: 462px;
   }
 }

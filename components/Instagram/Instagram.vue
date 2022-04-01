@@ -1,6 +1,6 @@
 <template>
   <div class="root">
-    <p class="text-h4 titulo text-center">MONO NO INSTAGRAM</p>
+    <p class="text-h4 titulo text-center mx-3">MONO NO INSTAGRAM</p>
     <div class="carousel-wrap justify-center">
       <div v-if="loaded">
         <slick
@@ -75,6 +75,13 @@ export default {
               slidesToScroll: 4,
               infinite: true,
               dots: true
+            }
+          },
+          {
+            breakpoint: 860,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2
             }
           },
           {

@@ -20,19 +20,17 @@
             </p>
             <p class="text-center texto-card" style="line-height: 2.5;">
               {{ textoCardapio11 }}
-              <!-- <span v-html="textoCardapio1"></span> -->
             </p>
           </v-col>
         </v-row>
 
         <v-row class="align-center">
-          <v-col align="center" class="order-last order-md-first">
+          <v-col align="center" class="order-last order-sm-first">
             <p class="text-h4 titulo-card text-center">
               EXPERIÊNCIA MONO
             </p>
             <p class="text-center texto-card" style="line-height: 2.5;">
               {{ textoCardapio21 }}
-              <!-- <span v-html="textoCardapio2"></span> -->
             </p>
           </v-col>
           <v-col align="center" style="min-width: 300px; overflow: hidden;">
@@ -84,7 +82,6 @@
             </p>
             <p class="text-center texto-card" style="line-height: 2.5;">
               {{ textoCardapio31 }}
-              <!-- <span v-html="textoCardapio3"></span> -->
             </p>
           </v-col>
         </v-row>
