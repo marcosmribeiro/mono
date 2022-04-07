@@ -1,8 +1,8 @@
 <template>
   <v-btn
-    :href="link"
     text
     class="simple-thumb"
+    @click="abrirLink(link)"
   >
     <span class="wrap">
       <span class="figure">
@@ -32,6 +32,12 @@ export default {
       type: String,
       required: true
     }
+  },
+  methods: {
+    abrirLink(link) {
+      window.open(link, '_blank').focus();
+    }
   }
+
 }
 </script>

@@ -1,7 +1,7 @@
 .root {
   display: block;
   position: relative;
-  background: $palette-common-black;
+  background: #FFFFFF;  //$palette-common-black;
   margin-top: 15px;
   height: 720px;
   @include breakpoints-down(xs) {

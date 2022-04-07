@@ -57,7 +57,9 @@ export default {
   data() {
     return {
       loaded: false,
-      items: imgAPI.instagram,
+      items: undefined,
+      instagramToken: 'IGQVJWSExsTVVoY3paWmxqQ3ExWjZAUWE1NM2hXNW1ZAcjhQaDB4alA0ODQ3WExma2RfUU9QRUwyRF81SEJ2WGxyUXJ3VXhOeS15OFpmdXQ1SU5MRjBtTlVDRlJrbkMyVVFhN19xLVVwU3dzTnRrZAktPSwZDZD',
+      instagramMaxImages: 6,
       slickOptions: {
         dots: true,
         speed: 500,
@@ -95,7 +97,9 @@ export default {
       }
     }
   },
-  mounted() {
+  
+  async mounted() {
+    this.items = JSON.parse(window.localStorage.getItem("images") || "[]")
     this.loaded = true;
   },
   methods: {
@@ -104,6 +108,28 @@ export default {
     },
     slickPrev() {
       this.$refs.slider.prev()
+    },
+    async buscarImagens() {
+      const axios = require('axios').default;
+      let url = 'https://graph.instagram.com/me/media/?access_token=' + this.instagramToken + '&fields=media_url,media_type,caption,permalink';
+
+      let response = await axios.get(url)
+      
+      var imgCounter = 0;
+      response.data.data.forEach(post => {
+        imgCounter ++;
+        if (imgCounter <= this.instagramMaxImages && post.media_type == 'IMAGE') {
+          if (!this.items) {
+            this.items = [{img: post.media_url, link: post.permalink}]
+          } else {
+            this.items.push({
+              img: post.media_url,
+              link: post.permalink
+            })
+          }
+        }
+      });
+
     }
   }
 }

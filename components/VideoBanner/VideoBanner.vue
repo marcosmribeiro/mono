@@ -1,9 +1,9 @@
 <template>
   <div class="root" :style="alturaMuldura">
     <div class="video" align="center">
-      <div class="overlay" />
+      <div class="" />
       <img v-if="!play" :src="videoPlaceholder" class="placeholder" alt="cover" />
-      <div class="rwd-video" :style="'margin-top: ' + margemVideo + 'px;'">
+      <div class="rwd-video" :style="'background-color: #FFFFFF; margin-top: ' + margemVideo + 'px;'">
         <youtube
           :video-id="videoId"
           :player-vars="playerVars"
@@ -74,8 +74,7 @@ export default {
   },
   methods: {
     onReady() {
-      this.videoWidth = Math.floor(window.innerWidth * 0.9);
-      console.log(this.videoWidth)
+      this.videoWidth = Math.floor(window.innerWidth);
       this.videoHeight = Math.floor((this.videoWidth / 16) * 9);
       this.player.playVideo()
     },

@@ -115,8 +115,40 @@ export default {
   },
   head() {
     return {
-      title: brand.mono.name + ' - Home Page'
+      title: brand.mono.name + ' - Home Page',
     }
+  },
+  async created() {
+    const axios = require('axios').default;
+    let token = 'IGQVJWSExsTVVoY3paWmxqQ3ExWjZAUWE1NM2hXNW1ZAcjhQaDB4alA0ODQ3WExma2RfUU9QRUwyRF81SEJ2WGxyUXJ3VXhOeS15OFpmdXQ1SU5MRjBtTlVDRlJrbkMyVVFhN19xLVVwU3dzTnRrZAktPSwZDZD';
+    let url = 'https://graph.instagram.com/me/media/?access_token=' + token + '&fields=media_url,media_type,caption,permalink';
+
+    let response = await axios.get(url)
+    
+    var instagramMaxImages = 6;
+    var imgCounter = 0;
+    var items = undefined;
+
+    response.data.data.forEach(post => {
+      imgCounter ++;
+      if (imgCounter <= instagramMaxImages && post.media_type == 'IMAGE') {
+        if (!items) {
+          items = [{img: post.media_url, link: post.permalink}]
+        } else {
+          items.push({
+            img: post.media_url,
+            link: post.permalink
+          })
+        }
+      }
+    });
+
+
+    if (process.browser){
+      window.localStorage.setItem("images", JSON.stringify(items));
+    }
+
   }
+  
 }
 </script>

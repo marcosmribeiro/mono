@@ -33,7 +33,7 @@
               {{ textoCardapio21 }}
             </p>
           </v-col>
-          <v-col align="center" style="min-width: 300px; overflow: hidden;">
+          <v-col align="center" style="min-width: 300px;">
             <div class="bg" :style="'background-image: url(' + imgBg2 + ')'">
               <div class="fg">
                 <img 
@@ -48,7 +48,7 @@
 
         <v-row class="align-center" :style="margemCouve">
           <v-col align="center" >
-            <div class="bg" :style="'background-image: url(' + imgBg3 + ');'">
+            <div>
               <div class="fg">
                 <img 
                   :src="imgsComposicao3[2]"
@@ -119,7 +119,7 @@ export default {
       textoCardapio11: "Nossa cozinha é equipada com as melhores mentes que produzem em cada peça, detalhes que alimentam os sentidos",
       
       posicao2: 680,
-      posicaoInicial2: 680,
+      posicaoInicial2: 600,
       maxPosicao2: 65,
       imgFg2: imgFg2,
       imgBg2: imgBg2,
@@ -150,6 +150,9 @@ export default {
     // Card
   },
   methods: {
+    pegarTamanhoDaTela() {
+      return window.innerWidth
+    },
     runOnScroll () {
       if (!this.isDesktop) {
         this.margem1 = 5;
@@ -169,7 +172,8 @@ export default {
       }
 
       if (this.posicao2 > this.maxPosicao2 || (window.pageYOffset - (1030 - this.offSetProduto1)) > this.maxPosicao2) {
-        let newPosicao2 = this.posicaoInicial2 - (window.pageYOffset - (1030 - this.offSetProduto1));
+        // let newPosicao2 = this.posicaoInicial2 - (window.pageYOffset - (1030 - this.offSetProduto1));
+        let newPosicao2 = this.posicaoInicial2 - (window.pageYOffset - (this.posicaoInicial2 / this.maxPosicao2));
         if (newPosicao2 >= this.maxPosicao2) {
           this.posicao2 = newPosicao2;
         }
@@ -211,6 +215,7 @@ export default {
   },
   beforeMount () {
     window.addEventListener('scroll', this.runOnScroll);
+    this.posicaoInicial2 = this.pegarTamanhoDaTela()
   },
   beforeDestroy() {
     window.removeEventListener('scroll', this.runOnScroll);
